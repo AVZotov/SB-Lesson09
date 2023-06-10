@@ -36,5 +36,26 @@ namespace Task001
 
             lstBox.ItemsSource = txtBlock1.Text.Split(' ');
         }
+
+        private void btnStringReverse_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtBlock2.Text))
+            {
+                MessageBox.Show("Text block is empty",
+                    this.Title, MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            var sentence = txtBlock2.Text.Split(" ");
+            Array.Reverse(sentence);
+            string result = String.Empty;
+
+            foreach (var word in sentence)
+            {
+                result += word + " ";
+            }
+
+            label.Content = result;
+        }
     }
 }
