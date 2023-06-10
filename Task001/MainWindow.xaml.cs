@@ -24,5 +24,17 @@ namespace Task001
         {
             InitializeComponent();
         }
+
+        private void btnStringSplit_Click(object sender, RoutedEventArgs e)
+        {
+            if(String.IsNullOrEmpty(txtBlock1.Text))
+            {
+                MessageBox.Show("Text block is empty",
+                    this.Title,MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            lstBox.ItemsSource = txtBlock1.Text.Split(' ');
+        }
     }
 }

@@ -5,37 +5,99 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task001"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="600" 
-        WindowStartupLocation="CenterScreen">
+        Height="600" Width="920" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
         
-        <Grid Grid.Column="0">
-            
-            <ListBox/>
-        </Grid>
+        <ListBox x:Name="lstBox"
+                 Style="{StaticResource MaterialDesignCardsListBox}"
+                 Padding="10"
+                 FontWeight="Medium"
+                 FontSize="16"
+                 BorderThickness="10"
+                 BorderBrush="LightGray"
+                 Background="LightSteelBlue">
+        </ListBox>
         
-        <Grid Grid.Column="1" Background="Gray">
-            <StackPanel Orientation="Vertical" 
-                        Background="Transparent">
-                <Label 
-                Content="Splitting text into separate words"
-                HorizontalAlignment="Center"
-                FontSize="16"
-                Margin="0 45 0 0"/>
+        <StackPanel Grid.Row="0"
+                    Grid.Column="1"
+                    Orientation="Vertical"
+                    Background="LightSteelBlue">
             
-            
-                <TextBox Margin="5 150 5 0"/>
+            <materialDesign:Card Margin="5" >
                 
-                <Button Margin="0 20 0 0"
-                        Width="80"
-                        Height="30"
-                        Content="Split"
-                        FontStyle="Italic"/>
-            </StackPanel>
-        </Grid>
+                <Label Margin="5"
+                         Padding="5"
+                         FontSize="16"
+                         HorizontalAlignment="Center">
+                    String splitting
+                </Label>
+            </materialDesign:Card>
+            
+            <materialDesign:Card Margin="5 100 5 5">
+                
+                <TextBox x:Name="txtBlock1" Margin="5"
+                         Padding="5"
+                         FontSize="14"
+                         HorizontalAlignment="Stretch"/>
+            </materialDesign:Card>
+            
+            <Button x:Name="btnStringSplit"
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Margin="0 50 0 0"
+                    Width="100"
+                    Content="Split String"
+                    Click="btnStringSplit_Click"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1"
+                    Orientation="Vertical"
+                    Background="LightSteelBlue">
+            
+            <materialDesign:Card Margin="5" >
+                
+                <Label Margin="5"
+                         Padding="5"
+                         FontSize="16"
+                         HorizontalAlignment="Center">
+                    String reverse
+                </Label>
+            </materialDesign:Card>
+            
+            <materialDesign:Card Margin="5 40 5 5">
+                
+                <TextBox x:Name="txtBlock2" Margin="5"
+                         Padding="5"
+                         FontSize="14"
+                         HorizontalAlignment="Stretch"/>
+            </materialDesign:Card>
+            
+            <Button x:Name="btnStringReverse"
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Margin="0 40 0 0"
+                    Width="100"
+                    Content="Split String"
+                    Click="btnStringReverse"/>
+        </StackPanel>
     </Grid>
 </Window>
